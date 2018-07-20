@@ -1,18 +1,20 @@
-    <!-- Bootstrap core JavaScript-->
-    <script src="<?php echo base_url(); ?>assets/vendor/jquery/jquery.min.js"></script>
-    <script src="<?php echo base_url(); ?>assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <!-- Core plugin JavaScript-->
-    <script src="<?php echo base_url(); ?>assets/vendor/jquery-easing/jquery.easing.min.js"></script>
-    <!-- Page level plugin JavaScript-->
-    <script src="<?php echo base_url(); ?>assets/vendor/chart.js/Chart.min.js"></script>
-    <script src="<?php echo base_url(); ?>assets/vendor/datatables/jquery.dataTables.js"></script>
-    <script src="<?php echo base_url(); ?>assets/vendor/datatables/dataTables.bootstrap4.js"></script>
-    <!-- Custom scripts for all pages-->
-    <script src="<?php echo base_url(); ?>assets/js/sb-admin.min.js"></script>
-    <!-- Custom scripts for this page-->
-    <script src="<?php echo base_url(); ?>assets/js/sb-admin-datatables.min.js"></script>
-    <script src="<?php echo base_url(); ?>assets/js/sb-admin-charts.min.js"></script>
-  </div>
+    <!-- jQuery -->
+    <script src="<?php echo base_url(); ?>assets//vendor/jquery/jquery.min.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="<?php echo base_url(); ?>assets//vendor/bootstrap/js/bootstrap.min.js"></script>
+
+    <!-- Metis Menu Plugin JavaScript -->
+    <script src="<?php echo base_url(); ?>assets//vendor/metisMenu/metisMenu.min.js"></script>
+
+    <!-- Morris Charts JavaScript -->
+    <script src="<?php echo base_url(); ?>assets//vendor/raphael/raphael.min.js"></script>
+    <script src="<?php echo base_url(); ?>assets//vendor/morrisjs/morris.min.js"></script>
+    <script src="<?php echo base_url(); ?>assets//data/morris-data.js"></script>
+
+    <!-- Custom Theme JavaScript -->
+    <script src="<?php echo base_url(); ?>assets//dist/js/sb-admin-2.js"></script>
+
 </body>
 
 </html>

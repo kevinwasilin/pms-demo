@@ -33,6 +33,7 @@ class User extends CI_Controller {
 			{
 				$this->form_validation->set_error_delimiters('<div class="alert alert-danger">', '</div>');
 				$this->load->view('templates/header');
+				$this->load->view('templates/navigation');
 				$this->load->view('user_login');
 				$this->load->view('templates/footer');
 			}
@@ -54,6 +55,7 @@ class User extends CI_Controller {
 					$data['content'] = "Your have successfuly logged in. Click <a href=".base_url().">here</a> to visit the main page.";
 
 					$this->load->view('templates/header');
+					$this->load->view('templates/navigation');
 					$this->load->view('user_notice',$data);
 					$this->load->view('templates/footer');
 				}
@@ -63,6 +65,7 @@ class User extends CI_Controller {
 					$data['content'] = "Incorrect email or password. Click <a href=".base_url()."login>here</a> to login.";
 
 					$this->load->view('templates/header');
+					$this->load->view('templates/navigation');
 					$this->load->view('user_notice',$data);
 					$this->load->view('templates/footer');
 
@@ -75,6 +78,7 @@ class User extends CI_Controller {
 			$data['title'] = "Login Success";
 			$data['content'] = "You are currently logged in. Click <a href=".base_url().">here</a> to visit the main page.";
 			$this->load->view('templates/header');
+			$this->load->view('templates/navigation');
 			$this->load->view('user_notice',$data);
 			$this->load->view('templates/footer');
 
@@ -84,13 +88,21 @@ class User extends CI_Controller {
 	}
 	public function logout()
 	{
-		$this->session->sess_destroy();
-		$data['title'] = "Logout Success";
-		$data['content'] = "You have successfuly logged out. Click <a href=".base_url().">here</a> to visit the main page.";
+		if($this->session->has_userdata('logged_in') == TRUE)
+		{
+			$this->session->sess_destroy();
+			$data['title'] = "Logout Success";
+			$data['content'] = "You have successfuly logged out. Click <a href=".base_url().">here</a> to visit the main page.";
+		}
+		else
+		{
+			$data['title'] = "Logout Failed";
+			$data['content'] = "You are not logged in. Click <a href=".base_url()."login>here</a> to login.";
+		}
 
-		$this->load->view('templates/header');
-		$this->load->view('user_notice',$data);
-		$this->load->view('templates/footer');
+			$this->load->view('templates/header');
+			$this->load->view('user_notice',$data);
+			$this->load->view('templates/footer');
 	}
 	public function register()
 	{	
