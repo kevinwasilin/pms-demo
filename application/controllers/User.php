@@ -6,9 +6,6 @@ class User extends CI_Controller {
 	{
 		parent::__construct();
 		$this->load->model('user_model');
-		$this->load->helper('form');
-		$this->load->library('form_validation');
-
 
 	}
 
@@ -123,6 +120,7 @@ class User extends CI_Controller {
 			{
 				$this->form_validation->set_error_delimiters('<div class="alert alert-danger">', '</div>');
 				$this->load->view('templates/header');
+				$this->load->view('templates/navigation');
 				$this->load->view('user_register');
 				$this->load->view('templates/footer');
 			}
@@ -140,6 +138,7 @@ class User extends CI_Controller {
 					$data['content'] = "Your account is successfuly registered. Click <a href=".base_url()."login>here</a> to login.";
 
 					$this->load->view('templates/header');
+					$this->load->view('templates/navigation');
 					$this->load->view('user_notice',$data);
 					$this->load->view('templates/footer');
 
@@ -148,6 +147,7 @@ class User extends CI_Controller {
 				{
 					$data['error_msg'] = 'Your email has already been registered! Please login.';
 					$this->load->view('templates/header');
+					$this->load->view('templates/navigation');
 					$this->load->view('user_register');
 					$this->load->view('templates/footer');
 
@@ -159,6 +159,7 @@ class User extends CI_Controller {
 			$data['title'] = "Registration Not Allowed";
 			$data['content'] = "You are currently logged in. Please <a href=".base_url()."logout>logout</a> before registering.";
 			$this->load->view('templates/header');
+			$this->load->view('templates/navigation');
 			$this->load->view('user_notice',$data);
 			$this->load->view('templates/footer');
 
